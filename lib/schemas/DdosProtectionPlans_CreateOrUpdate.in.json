@@ -1,0 +1,91 @@
+{
+    "type": "object",
+    "properties": {
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "ddosProtectionPlanName": {
+            "required": true,
+            "type": "string"
+        },
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "A DDoS protection plan in a resource group.",
+            "properties": {
+                "etag": {
+                    "description": "A unique read-only string that changes whenever the resource is updated.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Resource ID.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "location": {
+                    "description": "Resource location.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Resource name.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "properties": {
+                    "description": "Properties of the DDoS protection plan.",
+                    "x-ms-client-flatten": true,
+                    "properties": {
+                        "provisioningState": {
+                            "description": "The provisioning state of the DDoS protection plan resource. Possible values are: 'Succeeded', 'Updating', 'Deleting', and 'Failed'.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "resourceGuid": {
+                            "description": "The resource GUID property of the DDoS protection plan resource. It uniquely identifies the resource, even if the user changes its name or migrate the resource across subscriptions or resource groups.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "virtualNetworks": {
+                            "description": "The list of virtual networks associated with the DDoS protection plan resource. This list is read-only.",
+                            "items": {
+                                "description": "Reference to another subresource.",
+                                "properties": {
+                                    "id": {
+                                        "description": "Resource ID.",
+                                        "type": "string"
+                                    }
+                                },
+                                "x-ms-azure-resource": true,
+                                "type": "object"
+                            },
+                            "readOnly": true,
+                            "type": "array"
+                        }
+                    }
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Resource tags.",
+                    "type": "object"
+                },
+                "type": {
+                    "description": "Resource type.",
+                    "readOnly": true,
+                    "type": "string"
+                }
+            },
+            "x-ms-azure-resource": true,
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
